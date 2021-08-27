@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ECommerce.Models.City>
+
+@{
+    ViewData["Title"] = "Cidades";
+}
+
+<h1 align="center">@ViewData["Title"]</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departments)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departments.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.id" class="btn btn-info">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nova Cidade</a>
+</p>
