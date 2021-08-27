@@ -8,7 +8,7 @@ namespace ECommerce.Models
 {
     public class City
     {
-        public int id { get; set; }
+        public int Id { get; set; }//Primary Keye
 
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "Compo de Preenchimento Obrigatório")]
@@ -16,9 +16,9 @@ namespace ECommerce.Models
 
         [Display(Name = "Departamento")]
         [Range(1, double.MaxValue, ErrorMessage = "Selecione o Departamento")]
-        public int DepartmentsId { get; set; }
+        public int? DepartmentsId { get; set; } //ForignKey
 
         [Display(Name = "Departamento")]
-        public virtual Departments Departments { get; set; }
+        public virtual Departments Departments { get; set; }// Reference navigation
     }
 }

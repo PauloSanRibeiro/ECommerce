@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uRk/Z0KXKO+ijaTsE3RPcT7YVmn82r771Obetmfw0kZpjvH3M03PjlpwDnuGW8KM3Ry6gj9o9Yv9QivGuwBgTw==",
+  "dgSpecHash": "/jwhMvW9l6U43MgWBs3YKl/Fd9JczB2G5oY7QSguDOewArFmFZeJg4J3onfe7bLQktCC8fkYLK3lG5tdHZvbzA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\ECommerceASPNETMVC\\ECommerceAspNET\\ECommerce\\ECommerce.csproj",
   "expectedPackageFiles": [
@@ -26,10 +26,10 @@
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.17\\microsoft.entityframeworkcore.3.1.17.nupkg.sha512",
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.17\\microsoft.entityframeworkcore.abstractions.3.1.17.nupkg.sha512",
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.17\\microsoft.entityframeworkcore.analyzers.3.1.17.nupkg.sha512",
-    "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.15\\microsoft.entityframeworkcore.design.3.1.15.nupkg.sha512",
+    "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.17\\microsoft.entityframeworkcore.design.3.1.17.nupkg.sha512",
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.17\\microsoft.entityframeworkcore.relational.3.1.17.nupkg.sha512",
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.15\\microsoft.entityframeworkcore.sqlserver.3.1.15.nupkg.sha512",
-    "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.15\\microsoft.entityframeworkcore.tools.3.1.15.nupkg.sha512",
+    "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.17\\microsoft.entityframeworkcore.tools.3.1.17.nupkg.sha512",
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.17\\microsoft.extensions.caching.abstractions.3.1.17.nupkg.sha512",
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.17\\microsoft.extensions.caching.memory.3.1.17.nupkg.sha512",
     "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.17\\microsoft.extensions.configuration.3.1.17.nupkg.sha512",

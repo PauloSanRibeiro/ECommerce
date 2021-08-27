@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -36,7 +34,7 @@ namespace ECommerce.Controllers
 
             var city = await _context.City
                 .Include(c => c.Departments)
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (city == null)
             {
                 return NotFound();
@@ -93,7 +91,17 @@ namespace ECommerce.Controllers
             {
                 return NotFound();
             }
-            ViewData["DepartmentsId"] = new SelectList(_context.Departments, "Id", "Name", city.DepartmentsId);
+
+            var dep = _context.Departments.ToList();
+            dep.Add(new Departments
+            {
+                Id = 0,
+                Name = "[Selecione o Departamento]"
+            });
+
+            dep = dep.OrderBy(d => d.Name).ToList();
+
+            ViewData["DepartmentsId"] = new SelectList(dep, "Id", "Name", city.DepartmentsId);
             return View(city);
         }
 
@@ -104,7 +112,7 @@ namespace ECommerce.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,Name,DepartmentsId")] City city)
         {
-            if (id != city.id)
+            if (id != city.Id)
             {
                 return NotFound();
             }
@@ -118,7 +126,7 @@ namespace ECommerce.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CityExists(city.id))
+                    if (!CityExists(city.Id))
                     {
                         return NotFound();
                     }
@@ -129,7 +137,18 @@ namespace ECommerce.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentsId"] = new SelectList(_context.Departments, "Id", "Name", city.DepartmentsId);
+
+
+            var dep = _context.Departments.ToList();
+            dep.Add(new Departments
+            {
+                Id = 0,
+                Name = "[Selecione o Departamento]"
+            });
+
+            dep = dep.OrderBy(d => d.Name).ToList();
+
+            ViewData["DepartmentsId"] = new SelectList(dep, "Id", "Name", city.DepartmentsId);
             return View(city);
         }
 
@@ -143,7 +162,7 @@ namespace ECommerce.Controllers
 
             var city = await _context.City
                 .Include(c => c.Departments)
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (city == null)
             {
                 return NotFound();
@@ -165,7 +184,7 @@ namespace ECommerce.Controllers
 
         private bool CityExists(int id)
         {
-            return _context.City.Any(e => e.id == id);
+            return _context.City.Any(e => e.Id == id);
         }
     }
 }

@@ -14,9 +14,9 @@ namespace ECommerce.Data
         {
 
 
-
         }
-        public DbSet<ECommerce.Models.Departments> Departments { get; set; }
-        public DbSet<ECommerce.Models.City> City { get; set; }
+        public DbSet<Departments> Departments { get; set; }
+        public DbSet<City> City { get; set; }
+
     }
 }
