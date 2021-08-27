@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ECommerceASPNETMVC\\ECommerceAspNET\\ECommerce\\ECommerce.csproj": {}
+    "C:\\Users\\wikihow2\\Documents\\Paulo\\ECommerce\\ECommerce\\ECommerce.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ECommerceASPNETMVC\\ECommerceAspNET\\ECommerce\\ECommerce.csproj": {
+    "C:\\Users\\wikihow2\\Documents\\Paulo\\ECommerce\\ECommerce\\ECommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ECommerceASPNETMVC\\ECommerceAspNET\\ECommerce\\ECommerce.csproj",
+        "projectUniqueName": "C:\\Users\\wikihow2\\Documents\\Paulo\\ECommerce\\ECommerce\\ECommerce.csproj",
         "projectName": "ECommerce",
-        "projectPath": "D:\\Projects\\ECommerceASPNETMVC\\ECommerceAspNET\\ECommerce\\ECommerce.csproj",
-        "packagesPath": "C:\\Users\\Paulo S Ribeiro\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ECommerceASPNETMVC\\ECommerceAspNET\\ECommerce\\obj\\",
+        "projectPath": "C:\\Users\\wikihow2\\Documents\\Paulo\\ECommerce\\ECommerce\\ECommerce.csproj",
+        "packagesPath": "C:\\Users\\wikihow2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wikihow2\\Documents\\Paulo\\ECommerce\\ECommerce\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Paulo S Ribeiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wikihow2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +45,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.17, )"

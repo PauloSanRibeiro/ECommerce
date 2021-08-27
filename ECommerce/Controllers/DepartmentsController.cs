@@ -54,12 +54,39 @@ namespace ECommerce.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")] Departments departments)
         {
+            if(_context.Departments.Any(c => c.Name == departments.Name))
+            {
+                ModelState.AddModelError("Nome", $"Departamento já cadastrado");
+            }
+
             if (ModelState.IsValid)
             {
+                //departments.Id = Guid.NewGuid();
                 _context.Add(departments);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+           /* if (ModelState.IsValid)
+            {
+                _context.Add(departments);
+                try
+                {
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+
+                    if (ex.InnerException != null && ex.InnerException.InnerException != null && ex.InnerException.Message.Contains("_Index"))
+                    {
+                        ModelState.AddModelError(string.Empty, "Não é possível inserir dois departamentos com o mesmo nome.");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, ex.Message);
+                    }
+                }
+            }*/
             return View(departments);
         }
 
@@ -91,26 +118,39 @@ namespace ECommerce.Controllers
                 return NotFound();
             }
 
+            if (_context.Departments.Any(c => c.Name == departments.Name))
+            {
+                ModelState.AddModelError("Nome", $"Departamento já cadastrado");
+            }
+
             if (ModelState.IsValid)
+            {
+                //departments.Id = Guid.NewGuid();
+                _context.Update(departments);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            /*if (ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(departments);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    if (!DepartmentsExists(departments.Id))
+
+                    if (ex.InnerException != null && ex.InnerException.InnerException != null && ex.InnerException.Message.Contains("_Index"))
                     {
-                        return NotFound();
+                        ModelState.AddModelError(string.Empty, "Não é possível inserir dois departamentos com o mesmo nome.");
                     }
                     else
                     {
-                        throw;
+                        ModelState.AddModelError(string.Empty, ex.Message);
                     }
-                }
-                return RedirectToAction(nameof(Index));
-            }
+                }*/
+        
             return View(departments);
         }
 
@@ -133,12 +173,12 @@ namespace ECommerce.Controllers
         }
 
         // POST: Departments/Delete/5
-        [HttpPost, ActionName("Delete")]    
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var departments = await _context.Departments.FindAsync(id);
-           _context.Departments.Remove(departments);
+            _context.Departments.Remove(departments);
 
             try
             {
@@ -149,7 +189,7 @@ namespace ECommerce.Controllers
             {
                 if (ex.InnerException != null && ex.InnerException.InnerException != null && ex.InnerException.Message.Contains("REFERENCE"))
                 {
-                    ModelState.AddModelError(string.Empty, "Não é possível remover o departamento, pois exite cidades vínuculados a ele.");
+                    ModelState.AddModelError(string.Empty, "Não é possível remover departamento que tenha cidade vínculada");
                 }
                 else
                 {

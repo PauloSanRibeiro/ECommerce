@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ECommerce.Models
 {
@@ -11,8 +10,13 @@ namespace ECommerce.Models
 
         public int Id { get; set; }
 
-        [Display(Name = "Nome")]
+
         [Required(ErrorMessage = "Campo de Preenchimento Obrigatório")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo nome deve conter entre {2} e {1} caracteres.")]
+        [MaxLength(50, ErrorMessage = "Erro")]
+        [Display(Name = "Nome")]
+        [Index(IsUnique = true)]
+
         public string Name { get; set; }
 
         public virtual ICollection<City> Cities { get; set; }
